@@ -2,57 +2,6 @@
 
 --[[
 
-WZG_KSS_3VU soon#6196
-V8L_FKU_1CR kenzar#8856
-2HU_GX9_ZK3 Ahmed <3#0054
-3DC_5BH_6VR AdiModeNguli#2014
-7KJ_M59_8TB mk4supra#3879
-9TQ_HFE_WZD KingDishakz#5439
-1JV_U8E_2LQ yazer#3126
-4GZ_SX2_Y9V quizx#6856
-D6B_KC7_AFN F16#1243
-5LT_EYG_HD4 khaledw4lid#7981
-A3W_R9X_C7B BuGhanim!#6008
-8NQ_V2P_4TF Yuuiii#6396
-UZD_TGS_KLJ Bien?#0296
-C1A_YH6_EFM JesusM#3958
-F5E_L8W_9HV vya6#8386
-J6S_V3C_4XN fisakuuuuu#8242
-7RB_W4G_K2E MBH#0001
-2DP_MV9_C8J diegoo#2572
-T9X_F6Y_LUZ zenka#1064
-V2N_K3H_1GD sewy#7723
-6HE_D9Z_WNY chafoster#0904
-R8C_G2T_LJU D!o#1332
-X7V_N1M_TK5 Atru225#8240
-K4Y_Q5B_H9P Skyyyyy#2045
-G1F_S2C_RL8 Killy3741
-H6T_W9V_N2Z Johnnyz#8321
-3DL_V8R_JUH
-9NY_T5K_CFA
-F4S_B3X_LJN
-Z5W_V7R_T4A
-P2E_F9K_CJD
-N8X_H2Y_L6G
-1RG_U6Z_DTF
-2WA_C7F_Y8L
-5VL_K6T_H1E
-9NB_J7G_R3Z
-3XP_T8W_C9D
-4LJ_S2E_Y6T
-7TY_K1N_V2U
-B4V_Q3H_Z6G
-L7M_T5R_J1E
-D9F_V1N_C8W
-6BZ_G2K_X5P
-C5D_R8U_W4E
-U4N_H6Y_T9C
-2LY_V7S_C8R
-1KF_G9X_L5J
-8BW_T6P_J2G
-3ZV_H1M_Y7N
-6TE_N8C_Q1U
-
 staticYellowFrame
 staticBlueFrame
 staticGreyFrame
@@ -79,7 +28,7 @@ add_button_with_icon|1btn_none| `9none|staticBlueFrame|2724|
 add_button_with_icon||END_LIST|noflags|0|0|
 add_quick_exit|
 end_dialog|wrench_modesxd|Cancel|Okay|
---add ] ]
+--
 varlist.netid = -1
 SendVarlist(varlist)
 ]]
@@ -2003,9 +1952,8 @@ function ut_adder_hook(type, packet)
             OnConsoleMessage("`0[ `3Mandq#3038 `0] `9fast UT adder `3enabled")
             AddCallback("UT_mode1", "OnVarlist", UT_mode1)
             AddCallback("UT_mode2", "OnVarlist", UT_mode2)
-            end
-            return true
-        end
+        return true
+    end
 end
 
 AddCallback("ut_adder_hook","OnPacket", ut_adder_hook)
