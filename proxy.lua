@@ -274,6 +274,11 @@ varlist.netid = -1
 SendVarlist(varlist)
 end
 
+function proxy_commands2()
+
+    -- add here like quick selection tab to see commands
+    
+end
 function proxy(type, packet)
     if packet == ("action|input\n|text|/proxy") then
         proxy_commands()
@@ -282,6 +287,15 @@ function proxy(type, packet)
 end
 
 AddCallback("proxy_commandsx","OnPacket", proxy)
+
+function proxy_commands2(type, packet)
+    if packet == ("action|input\n|text|/proxy") then
+        proxy_commands2()
+        return true
+    end
+end
+
+AddCallback("proxy_commands2","OnPacket", proxy_commands2)
 
 function hide_dialog(varlist)
 	if varlist[0]:find("OnDialogRequest") and varlist[1]:find("end_dialog|drop_item|Cancel|OK|")then
@@ -1418,6 +1432,7 @@ hair_change = 0
 neck_change = 0
 ances_chnage = 0
 
+-- make it constumable
 function save_clothe_when_enter69(varlist)
         if varlist[0]:find("OnMagicCompassTrackingItemIDChanged") then
             SendPacket(2,"action|setSkin\ncolor|3033464831")
@@ -1933,11 +1948,11 @@ AddCallback("UT_emptier", "OnVarlist", UT_emptier)
 function ut_adder_hook(type, packet)
     if packet == ("action|input\n|text|/ut add") or packet == ("action|input\n|text|/ua") then
             ut_adder_mode = true
+            ut_emptier_mode = false
             OnConsoleMessage("`0[ `3Mandq#3038 `0] `9fast UT adder `3enabled")
-            RemoveCallback("UT_mode3")
-            RemoveCallback("UT_mode4")
             AddCallback("UT_mode1", "OnVarlist", UT_mode1)
             AddCallback("UT_mode2", "OnVarlist", UT_mode2)
+            end
             return true
         end
 end
@@ -1946,10 +1961,9 @@ AddCallback("ut_adder_hook","OnPacket", ut_adder_hook)
 
 function ut_emptier_hook(type, packet)
     if packet == ("action|input\n|text|/ut empty") or packet == ("action|input\n|text|/ue") then
+            ut_adder_mode = false
             ut_emptier_mode = true
             OnConsoleMessage("`0[ `3Mandq#3038 `0] `9fast UT emptier `3enabled")
-            RemoveCallback("UT_mode1")
-            RemoveCallback("UT_mode2")
             AddCallback("UT_mode3", "OnVarlist", UT_mode3)
             AddCallback("UT_mode4", "OnVarlist", UT_mode4)
             return true
@@ -1961,13 +1975,6 @@ AddCallback("ut_emptier_hook","OnPacket", ut_emptier_hook)
 function ut_on_off(type, packet)
     if packet == ("action|input\n|text|/ut off") or packet == ("action|input\n|text|/uoff") then
         OnConsoleMessage("`0[ `3Mandq#3038 `0] `9UT mode is now `3off")
-        if ut_adder_mode then
-        RemoveCallback("UT_mode1")
-        RemoveCallback("UT_mode2")
-        else
-        RemoveCallback("UT_mode3")
-        RemoveCallback("UT_mode4")
-        end
         ut_emptier_mode = false
         ut_adder_mode = false
         return true
@@ -2025,9 +2032,8 @@ AddCallback("GAIA_emptier", "OnVarlist", GAIA_emptier)
 function gaia_adder_hook(type, packet)
     if packet == ("action|input\n|text|/gaia add") or packet == ("action|input\n|text|/ga") then
             gaia_adder_mode = true
+            gaia_emptier_mode = false
             OnConsoleMessage("`0[ `3Mandq#3038 `0] `9fast GAIA adder `3enabled")
-            RemoveCallback("GAIA_mode3")
-            RemoveCallback("GAIA_mode4")
             AddCallback("GAIA_mode1", "OnVarlist", GAIA_mode1)
             AddCallback("GAIA_mode2", "OnVarlist", GAIA_mode2)
             return true
@@ -2039,9 +2045,8 @@ AddCallback("gaia_adder_hook","OnPacket", gaia_adder_hook)
 function gaia_emptier_hook(type, packet)
     if packet == ("action|input\n|text|/gaia empty") or packet == ("action|input\n|text|/ge") then
             gaia_emptier_mode = true
+            gaia_adder_mode = false
             OnConsoleMessage("`0[ `3Mandq#3038 `0] `9fast GAIA emptier `3enabled")
-            RemoveCallback("GAIA_mode1")
-            RemoveCallback("GAIA_mode2")
             AddCallback("GAIA_mode3", "OnVarlist", GAIA_mode3)
             AddCallback("GAIA_mode4", "OnVarlist", GAIA_mode4)
             return true
@@ -2053,13 +2058,6 @@ AddCallback("gaia_emptier_hook","OnPacket", gaia_emptier_hook)
 function gaia_on_off(type, packet)
     if packet == ("action|input\n|text|/gaia off") or packet == ("action|input\n|text|/goff") then
         OnConsoleMessage("`0[ `3Mandq#3038 `0] `9GAIA mode is now `3off")
-        if gaia_adder_mode then
-        RemoveCallback("GAIA_mode1")
-        RemoveCallback("GAIA_mode2")
-        else
-        RemoveCallback("GAIA_mode3")
-        RemoveCallback("GAIA_mode4")
-        end
         gaia_emptier_mode = false
         gaia_adder_mode = false
         return true
@@ -2085,11 +2083,9 @@ function auto_put_donationbox_hook_xd(type, packet)
         if auto_put_donationbox_mode == true then
             auto_put_donationbox_mode = false
             OnConsoleMessage("`0[ `3Mandq#3038 `0] `9fast empty donation `3disabled")
-        RemoveCallback("auto_put_donationbox")
         elseif auto_put_donationbox_mode == false then
             auto_put_donationbox_mode = true
             OnConsoleMessage("`0[ `3Mandq#3038 `0] `9fast empty donation `3enabled")
-        AddCallback("auto_put_donationbox","OnVarlist", auto_put_donationbox)
         end
     return true
 end
@@ -2114,11 +2110,9 @@ function auto_empty_donationbox_hook_xd(type, packet)
         if auto_empty_donationbox_mode == true then
             auto_empty_donationbox_mode = false
             OnConsoleMessage("`0[ `3Mandq#3038 `0] `9fast empty donation `3disabled")
-        RemoveCallback("auto_empty_donationbox")
         elseif auto_empty_donationbox_mode == false then
             auto_empty_donationbox_mode = true
             OnConsoleMessage("`0[ `3Mandq#3038 `0] `9fast empty donation `3enabled")
-        AddCallback("auto_empty_donationbox","OnVarlist", auto_empty_donationbox)
         end
     return true
 end
