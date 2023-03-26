@@ -1,6 +1,3 @@
--- # Growtopia Proxy # --
-
-
 --[[
 
 LIST TO ADD :
@@ -54,7 +51,7 @@ function OnConsoleMessage(text)
     SendVarlist(var)
 end
 
-OnConsoleMessage("`0[ `3Mandq#3038 `0] `9/proxy to show commands !")
+OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9/proxy to show commands !")
 
 function proxy_commands()
 function string.removeColors(varlist)
@@ -286,7 +283,7 @@ add_spacer|small|
 add_label_with_icon|big|`3Check my social media !``|left|8224|
 add_spacer|small|
 add_url_button||`1Check My Youtube ! ``|NOFLAGS|https://www.youtube.com/channel/UCkTYJ2vLRN43jIQzCRa9Slw|
-add_url_button||`1Check My Instagram ! ``|NOFLAGS|https://www.instagram.com/_mandq_/|
+add_url_button||`1Check My Instagram ! ``|NOFLAGS|https://www.instagram.com/esecrete/|
 add_url_button||`1Join Our Discord Server ! ``|NOFLAGS|https://discord.gg/b8gfzbAcCq|
 add_spacer|small|
 add_quick_exit|
@@ -808,11 +805,11 @@ function hide_dialogx(type, packet)
     if packet == ("action|input\n|text|/dialog") then
         if dialog_hide == true then
             dialog_hide = false
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Drop dialog is now `3visible")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Drop dialog is now `3visible")
         RemoveCallback("hide_dialog")
         elseif dialog_hide == false then
             dialog_hide = true
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Drop dialog is now `3invisible")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Drop dialog is now `3invisible")
             AddCallback("hide_dialog","OnVarlist", hide_dialog)
         end
     return true
@@ -852,7 +849,7 @@ function cdrop_delayed()
     dl_to_drop = amount // 100 -- calculate dls to drop
     wl_to_drop = amount % 100 -- calculate wls to drop
     if dl_count < dl_to_drop then -- check if enough DLs to drop
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Not enough DLs to drop")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Not enough DLs to drop")
         OnTextOverlay("`9Not enough DLs to drop `3"..dl_to_drop.. " `9DLS")
         return false
     elseif wl_count < wl_to_drop then -- check if enough WLS to drop
@@ -870,7 +867,7 @@ function cdrop_delayed()
             SendPacket(2, "action|dialog_return\ndialog_name|drop_item\nitemID|242|\ncount|"..wl_to_drop)
             Sleep(50)
         end
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         OnTextOverlay("`9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         return true
     else -- drop items
@@ -884,7 +881,7 @@ function cdrop_delayed()
             SendPacket(2, "action|dialog_return\ndialog_name|drop_item\nitemID|242|\ncount|"..wl_to_drop)
             Sleep(50)
         end
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         OnTextOverlay("`9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         return true
     end
@@ -906,11 +903,11 @@ function dropwl(type, packet)
           for _,item in pairs(GetInventory()) do
             if item.id == 242 then
               if item.count < amount then
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9No enough wls.")
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9No enough wls.")
                 OnTextOverlay("`9No enough wls.")
                 return true
               else
-          OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Dropping`3" ..wl.. " `9wls")
+          OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Dropping`3" ..wl.. " `9wls")
           OnTextOverlay("`9Dropping`3" ..wl.. " `9wls")
           SendPacket(2, "action|drop\n|itemID|242")
           SendPacket(2, "action|dialog_return\ndialog_name|drop_item\nitemID|242|\ncount|" .. wl)
@@ -941,11 +938,11 @@ function dropdl(type, packet)
           for _,item in pairs(GetInventory()) do
             if item.id == 1796 then
               if item.count < amount then
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9No enough dls.")
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9No enough dls.")
                 OnTextOverlay("`9No enough dls.")
                 return true
               else
-          OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Dropping`3" ..dl.. " `9dls")
+          OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Dropping`3" ..dl.. " `9dls")
           OnTextOverlay("`9Dropping`3" ..dl.. " `9dls")
           SendPacket(2, "action|drop\n|itemID|1796")
           SendPacket(2, "action|dialog_return\ndialog_name|drop_item\nitemID|1796|\ncount|" .. dl)
@@ -976,11 +973,11 @@ function dropbgl(type, packet)
           for _,item in pairs(GetInventory()) do
             if item.id == 7188 then
               if item.count < amount then
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9No enough bgls.")
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9No enough bgls.")
                 OnTextOverlay("`9No enough bgls.")
                 return true
               else
-          OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Dropping`3" ..bgl.. " `9bgls")
+          OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Dropping`3" ..bgl.. " `9bgls")
           OnTextOverlay("`9Dropping`3" ..bgl.. " `9bgls")
           SendPacket(2, "action|drop\n|itemID|7188")
           SendPacket(2, "action|dialog_return\ndialog_name|drop_item\nitemID|7188|\ncount|" .. bgl)
@@ -1003,7 +1000,7 @@ function daw(type, packet)
         daw_count = math.floor(daw_count1)
     end
     end
-    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Dropping `3" ..daw_count.. " `9wls")
+    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Dropping `3" ..daw_count.. " `9wls")
     OnTextOverlay("`9Dropping `3" ..daw_count.. " `9wls")
     SendPacket(2, "action|drop\n|itemID|242")
     SendPacket(2, "action|dialog_return\ndialog_name|drop_item\nitemID|242|\ncount|"..daw_count1)
@@ -1021,7 +1018,7 @@ function sethost(type, packet)
         if cmd:find("sethost") then
             sethost_world = cmd:gsub("sethost", "")
                 sethost_world1 = sethost_world
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Host world set to : `3"..sethost_world1)
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Host world set to : `3"..sethost_world1)
           return true
         end
     end
@@ -1038,7 +1035,7 @@ function setsave(type, packet)
         if cmd:find("setsave") then
             setsave_world = cmd:gsub("setsave", "")
             setsave_world1 = setsave_world
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Save world set to : `3"..setsave_world)
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Save world set to : `3"..setsave_world)
           return true
         end
     end
@@ -1082,7 +1079,7 @@ function add(type, packet)
     add_item = tonumber(add_item)
     add_count = tonumber(add_count)
 
-    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Adding `3Item id : `9 "..add_item.." `3Item count : `9" ..add_count)
+    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Adding `3Item id : `9 "..add_item.." `3Item count : `9" ..add_count)
     local packet = {}
     packet.type = 13
     packet.int_data = add_item
@@ -1103,7 +1100,7 @@ function doorxxx(type, packet)
     cmd = text:gsub("/", "")
     if cmd:find("door") then
     door_id = cmd:gsub("door ", "")
-    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Joing door id `3"..door_id)
+    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Joing door id `3"..door_id)
     world = GetLocal().world
     SendPacket(3, "action|join_request\nname|"..world.."|"..door_id.."\ninvitedWorld|0")
         return true
@@ -1121,7 +1118,7 @@ function pos1(type, packet)
     if packet == ("action|input\n|text|/setpos1") then
         x_pos1 = math.floor(GetLocal().pos_x / 32)
         y_pos1 = math.floor(GetLocal().pos_y / 32)
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9pos 1 set to `3"..x_pos1.." `9,`3"..y_pos1)
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9pos 1 set to `3"..x_pos1.." `9,`3"..y_pos1)
         local var = {}
         var[0] = "OnParticleEffect"
         var[1] = 354
@@ -1140,7 +1137,7 @@ function pos2(type, packet)
     if packet == ("action|input\n|text|/setpos2") then
         x_pos2 = math.floor(GetLocal().pos_x / 32)
         y_pos2 = math.floor(GetLocal().pos_y / 32)
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9pos 2 set to `3"..x_pos2.." `9,`3"..y_pos2)
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9pos 2 set to `3"..x_pos2.." `9,`3"..y_pos2)
         local var = {}
         var[0] = "OnParticleEffect"
         var[1] = 354
@@ -1159,7 +1156,7 @@ function pos3(type, packet)
     if packet == ("action|input\n|text|/setpos3") then
         x_pos3 = math.floor(GetLocal().pos_x / 32)
         y_pos3 = math.floor(GetLocal().pos_y / 32)
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9pos 3 set to `3"..x_pos3.." `9,`3"..y_pos3)
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9pos 3 set to `3"..x_pos3.." `9,`3"..y_pos3)
         local var = {}
         var[0] = "OnParticleEffect"
         var[1] = 354
@@ -1178,7 +1175,7 @@ function pos4(type, packet)
     if packet == ("action|input\n|text|/setpos4") then
         x_pos4 = math.floor(GetLocal().pos_x / 32)
         y_pos4 = math.floor(GetLocal().pos_y / 32)
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9pos 4 set to `3"..x_pos4.." `9,`3"..y_pos4)
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9pos 4 set to `3"..x_pos4.." `9,`3"..y_pos4)
         local var = {}
         var[0] = "OnParticleEffect"
         var[1] = 354
@@ -1197,7 +1194,7 @@ function posback(type, packet)
     if packet == ("action|input\n|text|/setposback") then
         x_posback = math.floor(GetLocal().pos_x / 32)
         y_posback = math.floor(GetLocal().pos_y / 32)
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9host pos set to `3"..x_posback.." `9,`3"..y_posback)
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9host pos set to `3"..x_posback.." `9,`3"..y_posback)
         local var = {}
         var[0] = "OnParticleEffect"
         var[1] = 356
@@ -1291,7 +1288,7 @@ function cdrop_delayed_win1()
     dl_to_drop = amount // 100 -- calculate dls to drop
     wl_to_drop = amount % 100 -- calculate wls to drop
     if dl_count < dl_to_drop then -- check if enough DLs to drop
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Not enough DLs to drop")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Not enough DLs to drop")
         OnTextOverlay("`9Not enough DLs to drop `3"..dl_to_drop.. " `9DLS")
         return false
     elseif wl_count < wl_to_drop then -- check if enough WLS to drop
@@ -1309,7 +1306,7 @@ function cdrop_delayed_win1()
             SendPacket(2, "action|dialog_return\ndialog_name|drop_item\nitemID|242|\ncount|"..wl_to_drop)
             Sleep(50)
         end
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         OnTextOverlay("`9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         return true
     else -- drop items
@@ -1324,7 +1321,7 @@ function cdrop_delayed_win1()
             Sleep(50)
         end
         FindPath(x_posback, y_posback)
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         OnTextOverlay("`9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         return true
     end
@@ -1344,7 +1341,7 @@ function cdrop_delayed_win2()
     dl_to_drop = amount // 100 -- calculate dls to drop
     wl_to_drop = amount % 100 -- calculate wls to drop
     if dl_count < dl_to_drop then -- check if enough DLs to drop
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Not enough DLs to drop")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Not enough DLs to drop")
         OnTextOverlay("`9Not enough DLs to drop `3"..dl_to_drop.. " `9DLS")
         return false
     elseif wl_count < wl_to_drop then -- check if enough WLS to drop
@@ -1362,7 +1359,7 @@ function cdrop_delayed_win2()
             SendPacket(2, "action|dialog_return\ndialog_name|drop_item\nitemID|242|\ncount|"..wl_to_drop)
             Sleep(50)
         end
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         OnTextOverlay("`9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         return true
     else -- drop items
@@ -1377,7 +1374,7 @@ function cdrop_delayed_win2()
             Sleep(50)
         end
         FindPath(x_posback, y_posback)
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         OnTextOverlay("`9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         return true
     end
@@ -1397,7 +1394,7 @@ function cdrop_delayed_win3()
     dl_to_drop = amount // 100 -- calculate dls to drop
     wl_to_drop = amount % 100 -- calculate wls to drop
     if dl_count < dl_to_drop then -- check if enough DLs to drop
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Not enough DLs to drop")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Not enough DLs to drop")
         OnTextOverlay("`9Not enough DLs to drop `3"..dl_to_drop.. " `9DLS")
         return false
     elseif wl_count < wl_to_drop then -- check if enough WLS to drop
@@ -1415,7 +1412,7 @@ function cdrop_delayed_win3()
             SendPacket(2, "action|dialog_return\ndialog_name|drop_item\nitemID|242|\ncount|"..wl_to_drop)
             Sleep(50)
         end
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         OnTextOverlay("`9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         return true
     else -- drop items
@@ -1430,7 +1427,7 @@ function cdrop_delayed_win3()
             Sleep(50)
         end
         FindPath(x_posback, y_posback)
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         OnTextOverlay("`9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         return true
     end
@@ -1450,7 +1447,7 @@ function cdrop_delayed_win4()
     dl_to_drop = amount // 100 -- calculate dls to drop
     wl_to_drop = amount % 100 -- calculate wls to drop
     if dl_count < dl_to_drop then -- check if enough DLs to drop
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Not enough DLs to drop")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Not enough DLs to drop")
         OnTextOverlay("`9Not enough DLs to drop `3"..dl_to_drop.. " `9DLS")
         return false
     elseif wl_count < wl_to_drop then -- check if enough WLS to drop
@@ -1468,7 +1465,7 @@ function cdrop_delayed_win4()
             SendPacket(2, "action|dialog_return\ndialog_name|drop_item\nitemID|242|\ncount|"..wl_to_drop)
             Sleep(50)
         end
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         OnTextOverlay("`9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         return true
     else -- drop items
@@ -1483,7 +1480,7 @@ function cdrop_delayed_win4()
             Sleep(50)
         end
         FindPath(x_posback, y_posback)
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         OnTextOverlay("`9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         return true
     end
@@ -1588,12 +1585,12 @@ function playertpxxx(type, packet)
         for _,playerx in ipairs(GetPlayers()) do
             if playerx.name:sub(3,-3) == player_name_tp then
                 found = true
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9player found !")
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9player found !")
                 FindPath(playerx.pos_x / 32 , playerx.pos_y / 32)
         return true
             end
             if not found then
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9player `4NOT `9found")
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9player `4NOT `9found")
             break 
             end
         end
@@ -1633,7 +1630,7 @@ function flagxx(type, packet)
         cmd = text:gsub("/", "")
         if cmd:find("flag ") then
             flagxxid = cmd:gsub("flag ", "")
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9changing flag to `3" ..flagxxid)
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9changing flag to `3" ..flagxxid)
             var2 = {}
             var2[0] = "OnCountryState"
             var2[1] = flagxxid
@@ -1728,7 +1725,7 @@ function random_world(type, packet)
         for i = 1,19 do
         totTxt = totTxt..string.char(math.random(97,122))
         end
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9warping to "..totTxt)
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9warping to "..totTxt)
         SendPacket(3, "action|join_request\nname|" .. totTxt)
     return true
     end
@@ -1738,7 +1735,7 @@ AddCallback("random_world","OnPacket", random_world)
 
 function cid(type, packet)
     if packet == ("action|input\n|text|/cid") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Making new account..")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Making new account..")
         SendPacket(2, "action|growid")
     return true
     end
@@ -1775,7 +1772,7 @@ function dt1_xd()
     dl_to_drop = drop_tax % 10000 // 100 -- calculate dls to drop
     wl_to_drop = ((drop_tax% 10000) % 100) -- calculate wls to drop
     if dl_count < dl_to_drop then -- check if enough DLs to drop
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Not enough DLs to drop")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Not enough DLs to drop")
         OnTextOverlay("`9Not enough DLs to drop `3"..dl_to_drop.. " `9DLS")
         return false
     elseif wl_count < wl_to_drop then -- check if enough WLS to drop
@@ -1793,7 +1790,7 @@ function dt1_xd()
             SendPacket(2, "action|dialog_return\ndialog_name|drop_item\nitemID|242|\ncount|"..wl_to_drop)
             Sleep(50)
         end
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         OnTextOverlay("`9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         return true
     else -- drop items
@@ -1807,7 +1804,7 @@ function dt1_xd()
             SendPacket(2, "action|dialog_return\ndialog_name|drop_item\nitemID|242|\ncount|"..wl_to_drop)
             Sleep(50)
         end
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         OnTextOverlay("`9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         FindPath(x_posback, y_posback)
         return true
@@ -1843,7 +1840,7 @@ function dt2_xd()
     dl_to_drop = drop_tax % 10000 // 100 -- calculate dls to drop
     wl_to_drop = ((drop_tax% 10000) % 100) -- calculate wls to drop
     if dl_count < dl_to_drop then -- check if enough DLs to drop
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Not enough DLs to drop")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Not enough DLs to drop")
         OnTextOverlay("`9Not enough DLs to drop `3"..dl_to_drop.. " `9DLS")
         return false
     elseif wl_count < wl_to_drop then -- check if enough WLS to drop
@@ -1861,7 +1858,7 @@ function dt2_xd()
             SendPacket(2, "action|dialog_return\ndialog_name|drop_item\nitemID|242|\ncount|"..wl_to_drop)
             Sleep(50)
         end
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         OnTextOverlay("`9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         return true
     else -- drop items
@@ -1875,7 +1872,7 @@ function dt2_xd()
             SendPacket(2, "action|dialog_return\ndialog_name|drop_item\nitemID|242|\ncount|"..wl_to_drop)
             Sleep(50)
         end
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         OnTextOverlay("`9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         FindPath(x_posback, y_posback)
         return true
@@ -1911,7 +1908,7 @@ function dt3_xd()
     dl_to_drop = drop_tax % 10000 // 100 -- calculate dls to drop
     wl_to_drop = ((drop_tax% 10000) % 100) -- calculate wls to drop
     if dl_count < dl_to_drop then -- check if enough DLs to drop
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Not enough DLs to drop")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Not enough DLs to drop")
         OnTextOverlay("`9Not enough DLs to drop `3"..dl_to_drop.. " `9DLS")
         return false
     elseif wl_count < wl_to_drop then -- check if enough WLS to drop
@@ -1929,7 +1926,7 @@ function dt3_xd()
             SendPacket(2, "action|dialog_return\ndialog_name|drop_item\nitemID|242|\ncount|"..wl_to_drop)
             Sleep(50)
         end
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         OnTextOverlay("`9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         return true
     else -- drop items
@@ -1943,7 +1940,7 @@ function dt3_xd()
             SendPacket(2, "action|dialog_return\ndialog_name|drop_item\nitemID|242|\ncount|"..wl_to_drop)
             Sleep(50)
         end
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         OnTextOverlay("`9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         FindPath(x_posback, y_posback)
         return true
@@ -1979,7 +1976,7 @@ function dt4_xd()
     dl_to_drop = drop_tax % 10000 // 100 -- calculate dls to drop
     wl_to_drop = ((drop_tax% 10000) % 100) -- calculate wls to drop
     if dl_count < dl_to_drop then -- check if enough DLs to drop
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Not enough DLs to drop")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Not enough DLs to drop")
         OnTextOverlay("`9Not enough DLs to drop `3"..dl_to_drop.. " `9DLS")
         return false
     elseif wl_count < wl_to_drop then -- check if enough WLS to drop
@@ -1997,7 +1994,7 @@ function dt4_xd()
             SendPacket(2, "action|dialog_return\ndialog_name|drop_item\nitemID|242|\ncount|"..wl_to_drop)
             Sleep(50)
         end
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         OnTextOverlay("`9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         return true
     else -- drop items
@@ -2011,7 +2008,7 @@ function dt4_xd()
             SendPacket(2, "action|dialog_return\ndialog_name|drop_item\nitemID|242|\ncount|"..wl_to_drop)
             Sleep(50)
         end
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         OnTextOverlay("`9Dropping `3" ..wl_to_drop.. " `9wls and `3"..dl_to_drop.. " `9dls")
         FindPath(x_posback, y_posback)
         return true
@@ -2020,7 +2017,7 @@ end
 
 function res(type, packet)
     if packet == ("action|input\n|text|/res") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9respawning")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9respawning")
         SendPacket(2, "action|respawn")
     return true
     end
@@ -2030,7 +2027,7 @@ AddCallback("respawn","OnPacket", res)
 
 function relog(type, packet)
     if packet == ("action|input\n|text|/relog") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9reloging")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9reloging")
         relog_world = GetLocal().world
         SendPacket(3, "action|quit_to_exit")
         SendPacket(3, "action|join_request\nname|"..relog_world.."\ninvitedWorld|0")
@@ -2134,7 +2131,7 @@ AddCallback("wm","OnPacket", wm)
 
 function Wrench_mode(type, packet)
     if packet:find("buttonClicked|wrench_pull") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9wrench mode set to `3pull")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9wrench mode set to `3pull")
         mode_wm = "pull"
         function Wrench(varlist)
             if varlist[0] == "OnDialogRequest" and varlist[1]:find("add_button|report_player|") then
@@ -2147,7 +2144,7 @@ function Wrench_mode(type, packet)
         AddCallback("Wrench", "OnVarlist", Wrench)
         return true
     elseif packet:find("buttonClicked|wrench_kick") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9wrench mode set to `3kick")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9wrench mode set to `3kick")
         mode_wm = "kick"
         function Wrench(varlist)
             if varlist[0] == "OnDialogRequest" and varlist[1]:find("add_button|report_player|") then
@@ -2160,7 +2157,7 @@ function Wrench_mode(type, packet)
         AddCallback("Wrench", "OnVarlist", Wrench)  
         return true
     elseif packet:find("buttonClicked|wrench_ban") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9wrench mode set to `3ban")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9wrench mode set to `3ban")
         mode_wm = "ban"
         function Wrench(varlist)
             if varlist[0] == "OnDialogRequest" and varlist[1]:find("add_button|report_player|") then
@@ -2174,7 +2171,7 @@ function Wrench_mode(type, packet)
         return true
     elseif packet:find("buttonClicked|wrench_off") then
         mode_wm = "off"
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9wrench mode is `3off")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9wrench mode is `3off")
         RemoveCallback("Wrench") 
         return true
     end
@@ -2207,25 +2204,25 @@ AddCallback("world_commands","OnPacket", world_commands)
 
 function world_mode(type, packet)
     if packet:find("buttonClicked|world_pull") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9pulling all players")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9pulling all players")
         for _,player in pairs(GetPlayers()) do
             SendPacket(2,  "action|input\n|text|/pull " .. player.name:sub(3, -3))
         end
         return true
     elseif packet:find("buttonClicked|world_kick") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9kicking all players")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9kicking all players")
         for _,player in pairs(GetPlayers()) do
             SendPacket(2,  "action|input\n|text|/kick " .. player.name:sub(3, -3))
         end 
         return true
     elseif packet:find("buttonClicked|world_trade") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9trading all players")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9trading all players")
         for _,player in pairs(GetPlayers()) do
             SendPacket(2,  "action|input\n|text|/trade " .. player.name:sub(3, -3))
         end
         return true
     elseif packet:find("buttonClicked|world_ban") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9baning all players")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9baning all players")
         for _,player in pairs(GetPlayers()) do
             SendPacket(2,  "action|input\n|text|/ban " .. player.name:sub(3, -3))
         end
@@ -2243,11 +2240,11 @@ mod_fly = false
 function modfly(type, packet)
     if packet == ("action|input\n|text|/modfly") then
         if mod_fly == false then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9mod fly is now `3enabled")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9mod fly is now `3enabled")
         EditToggle("ModFly", true)
         mod_fly = true
         elseif mod_fly == true then
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9mod fly is now `3disabled")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9mod fly is now `3disabled")
             EditToggle("ModFly", false)
             mod_fly = false
         end
@@ -2265,9 +2262,9 @@ function bypassxy(type, packet)
                 y_pos = tile.pos_y
                 x_pos = math.floor(x_pos)
                 y_pos = math.floor(y_pos)
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9x pos set to : `3"..x_pos.." `0x `9y pos set to : `3"..y_pos)
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Now wrench Storage Box then type /bypass")
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `4NOTE : `9you MUST have atleast 1 Dirt Block.")
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9x pos set to : `3"..x_pos.." `0x `9y pos set to : `3"..y_pos)
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Now wrench Storage Box then type /bypass")
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `4NOTE : `9you MUST have atleast 1 Dirt Block.")
             end
         end
         return true
@@ -2299,7 +2296,7 @@ save_set_modes = false
 function sccd1(type, packet)
     if packet == ("action|input\n|text|/sc") then
         if save_set_modes == false then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9save set when joning world is `3enabled")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9save set when joning world is `3enabled")
         function save_clothe_when_enter69(varlist)
             if varlist[0]:find("OnMagicCompassTrackingItemIDChanged") then
                 SendPacket(2,"action|setSkin\ncolor|3033464831")
@@ -2318,7 +2315,7 @@ function sccd1(type, packet)
     AddCallback("save_clothe_when_enter69", "OnVarlist", save_clothe_when_enter69)        
     save_set_modes = true
         elseif save_set_modes == true then
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9safe set when joning world is `3disabled")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9safe set when joning world is `3disabled")
             RemoveCallback("save_clothe_when_enter69")
             save_set_modes = false
         end
@@ -2332,7 +2329,7 @@ save_title_modes = false
 function std1(type, packet)
     if packet == ("action|input\n|text|/st") then
         if save_title_modes == false then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9save title when joning world is `3enabled")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9save title when joning world is `3enabled")
         function save_title_when_enter69(varlist)
             if varlist[0]:find("OnMagicCompassTrackingItemIDChanged") then
     if titlexd == "legend" then
@@ -2395,7 +2392,7 @@ end
 
 save_title_modes = true
     elseif save_title_modes == true then
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9safe title when joning world is `3disabled")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9safe title when joning world is `3disabled")
             RemoveCallback("save_title_when_enter69")
             save_title_modes = false
         end
@@ -2472,7 +2469,7 @@ function ances_chnage(type, packet)
   text = packet:gsub("action|input\n|text|", "")
     if text:find("/vances") then
       ances_chnage = text:gsub("/vances", "")
-    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Ances :`3"..ances_chnage)
+    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Ances :`3"..ances_chnage)
     new_clothes() 
     return true
     end
@@ -2486,7 +2483,7 @@ function neck_change(type, packet)
   text = packet:gsub("action|input\n|text|", "")
     if text:find("/vneck") then
       neck_change = text:gsub("/vneck", "")
-    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Neck :`3"..neck_change)
+    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Neck :`3"..neck_change)
     new_clothes() 
     return true
     end
@@ -2500,7 +2497,7 @@ function hair_change(type, packet)
   text = packet:gsub("action|input\n|text|", "")
     if text:find("/vhair") then
       hair_change = text:gsub("/vhair", "")
-    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Hair :`3"..hair_change)
+    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Hair :`3"..hair_change)
     new_clothes() 
     return true
     end
@@ -2514,7 +2511,7 @@ function wing_change(type, packet)
   text = packet:gsub("action|input\n|text|", "")
     if text:find("/vwing") then
       wing_change = text:gsub("/vwing", "")
-    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Wings :`3"..wing_change)
+    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Wings :`3"..wing_change)
     new_clothes() 
     return true
     end
@@ -2528,7 +2525,7 @@ function hand_change(type, packet)
   text = packet:gsub("action|input\n|text|", "")
     if text:find("/vhand") then
       hand_change = text:gsub("/vhand", "")
-    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Hand :`3"..hand_change)
+    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Hand :`3"..hand_change)
     new_clothes() 
     return true
     end
@@ -2542,7 +2539,7 @@ function shoes_change(type, packet)
   text = packet:gsub("action|input\n|text|", "")
     if text:find("/vshoes") then
       shoes_change = text:gsub("/vshoes", "")
-    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Shoes :`3"..shoes_change)
+    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Shoes :`3"..shoes_change)
     new_clothes() 
     return true
     end
@@ -2556,7 +2553,7 @@ function pant_change(type, packet)
   text = packet:gsub("action|input\n|text|", "")
     if text:find("/vpant") then
       pant_change = text:gsub("/vpant", "")
-    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Pants :`3"..pant_change)
+    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Pants :`3"..pant_change)
     new_clothes() 
     return true
     end
@@ -2570,7 +2567,7 @@ function shirt_change(type, packet)
   text = packet:gsub("action|input\n|text|", "")
     if text:find("/vshirt") then
       shirt_change = text:gsub("/vshirt", "")
-    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Shirt :`3"..shirt_change)
+    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Shirt :`3"..shirt_change)
     new_clothes() 
     return true
     end
@@ -2584,7 +2581,7 @@ function hat_change(type, packet)
   text = packet:gsub("action|input\n|text|", "")
     if text:find("/vhat") then
       hat_change = text:gsub("/vhat", "")
-    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Hat :`3"..hat_change)
+    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Hat :`3"..hat_change)
     new_clothes() 
     return true
     end
@@ -2595,7 +2592,7 @@ AddCallback("hat_change","OnPacket", hat_change)
 
 function set_save_clothes(type, packet)
   if packet == ("action|input\n|text|/clothe") or packet == ("action|input\n|text|/clothes") then
-    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Changing clothes")
+    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Changing clothes")
     new_clothes()
     local var = {}
     var[0] = "OnParticleEffect"
@@ -2615,10 +2612,10 @@ AddCallback("set_save_clothes","OnPacket", set_save_clothes)
 function start_stop_check_gems(type, packet)
     if packet == ("action|input\n|text|/bj") then
         if gems_checker then
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9BJ gems checker is `3off")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9BJ gems checker is `3off")
             gems_checker = false
            else
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9BJ gems checker is `3on")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9BJ gems checker is `3on")
             gems_checker = true
         end
            RunThread(function()
@@ -2653,7 +2650,7 @@ end
 
 function ve(type, packet)
     if packet == ("action|input\n|text|/ve") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9vend mode set to `3empty")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9vend mode set to `3empty")
         function vend_mode(varlist)
             if varlist[0] == "OnDialogRequest" and varlist[1]:find("end_dialog|vending|Close|Update|") then
                 SendPacket(2, "action|dialog_return\ndialog_name|vending\ntilex|"..varlist[1]:match("embed_data|tilex|(%d+)").."|\ntiley|"..varlist[1]:match("embed_data|tiley|(%d+)").."|\nbuttonClicked|pullstock")
@@ -2669,7 +2666,7 @@ AddCallback("ve","OnPacket", ve)
 
 function va(type, packet)
     if packet == ("action|input\n|text|/va") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9vend mode set to `3add")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9vend mode set to `3add")
         function vend_mode(varlist)
             if varlist[0] == "OnDialogRequest" and varlist[1]:find("end_dialog|vending|Close|Update|") then
                 SendPacket(2, "action|dialog_return\ndialog_name|vending\ntilex|"..varlist[1]:match("embed_data|tilex|(%d+)").."|\ntiley|"..varlist[1]:match("embed_data|tiley|(%d+)").."|\nbuttonClicked|addstock")
@@ -2692,7 +2689,7 @@ function set_vb(type, packet)
         if cmd:find("vb") then
             set_vb_123 = cmd:gsub("vb", "")
             set_vb = tonumber(set_vb_123)
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Amount to buy : `3"..set_vb.."")
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Amount to buy : `3"..set_vb.."")
                 vend_buy = true
                 function vend_mode(varlist)
                     if varlist[0] == "OnDialogRequest" and varlist[1]:find("end_dialog|vending|Close|Buy|") then
@@ -2728,7 +2725,7 @@ AddCallback("set_vb","OnPacket", set_vb)
 
 function voff(type, packet)
     if packet == ("action|input\n|text|/voff") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9vend mode is now `3off")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9vend mode is now `3off")
         RemoveCallback("vend_mode")
         if vend_buy then
         RemoveCallback("buy_vend_2")
@@ -2742,10 +2739,10 @@ AddCallback("voff","OnPacket", voff)
 function start_stop_collect(type, packet)
     if packet == ("action|input\n|text|/autocollect") or packet == ("action|input\n|text|/ac")then
         if autocollect then
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9autocollect is `3off")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9autocollect is `3off")
             autocollect = false
            else
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9autocollect is `3on")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9autocollect is `3on")
             autocollect = true
         end
            RunThread(function()
@@ -2791,7 +2788,7 @@ end
 function wp(type, packet)
     if packet == ("action|input\n|text|/wp") then
         mode_wm = "pull"
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9wrench mode set to `3pull")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9wrench mode set to `3pull")
         function Wrench(varlist)
             if varlist[0] == "OnDialogRequest" and varlist[1]:find("add_button|report_player|") then
                 x = varlist[1]:removeColors()
@@ -2810,7 +2807,7 @@ AddCallback("wp","OnPacket", wp)
 function wk(type, packet)
     if packet == ("action|input\n|text|/wk") then
         mode_wm = "kick"
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9wrench mode set to `3kick")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9wrench mode set to `3kick")
         function Wrench(varlist)
             if varlist[0] == "OnDialogRequest" and varlist[1]:find("add_button|report_player|") then
                 x = varlist[1]:removeColors()
@@ -2829,7 +2826,7 @@ AddCallback("wk","OnPacket", wk)
 function wb(type, packet)
     if packet == ("action|input\n|text|/wb") then
         mode_wm = "ban"
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9wrench mode set to `3ban")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9wrench mode set to `3ban")
         function Wrench(varlist)
             if varlist[0] == "OnDialogRequest" and varlist[1]:find("add_button|report_player|") then
                 x = varlist[1]:removeColors()
@@ -2848,7 +2845,7 @@ AddCallback("wb","OnPacket", wb)
 function woff(type, packet)
     if packet == ("action|input\n|text|/woff") then
         mode_wm = "off"
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9wrench mode is now `3off")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9wrench mode is now `3off")
         RemoveCallback("Wrench") 
         return true
     end
@@ -2906,7 +2903,7 @@ function ut_adder_hook(type, packet)
     if packet == ("action|input\n|text|/ut add") or packet == ("action|input\n|text|/ua") then
             ut_adder_mode = true
             ut_emptier_mode = false
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9fast UT adder `3enabled")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9fast UT adder `3enabled")
             AddCallback("UT_mode1", "OnVarlist", UT_mode1)
             AddCallback("UT_mode2", "OnVarlist", UT_mode2)
         return true
@@ -2919,7 +2916,7 @@ function ut_emptier_hook(type, packet)
     if packet == ("action|input\n|text|/ut empty") or packet == ("action|input\n|text|/ue") then
             ut_adder_mode = false
             ut_emptier_mode = true
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9fast UT emptier `3enabled")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9fast UT emptier `3enabled")
             AddCallback("UT_mode3", "OnVarlist", UT_mode3)
             AddCallback("UT_mode4", "OnVarlist", UT_mode4)
             return true
@@ -2930,7 +2927,7 @@ AddCallback("ut_emptier_hook","OnPacket", ut_emptier_hook)
 
 function ut_on_off(type, packet)
     if packet == ("action|input\n|text|/ut off") or packet == ("action|input\n|text|/uoff") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9UT mode is now `3off")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9UT mode is now `3off")
         ut_emptier_mode = false
         ut_adder_mode = false
         return true
@@ -3010,7 +3007,7 @@ function UT_modes12(type, packet)
         ut_of_or_no = true
         ut_adder_mode = true
         ut_emptier_mode = false
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9fast UT adder `3enabled")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9fast UT adder `3enabled")
         AddCallback("UT_mode1", "OnVarlist", UT_mode1)
         AddCallback("UT_mode2", "OnVarlist", UT_mode2)
         return true
@@ -3018,13 +3015,13 @@ function UT_modes12(type, packet)
         ut_of_or_no = true
         ut_adder_mode = false
         ut_emptier_mode = true
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9fast UT emptier `3enabled")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9fast UT emptier `3enabled")
         AddCallback("UT_mode3", "OnVarlist", UT_mode3)
         AddCallback("UT_mode4", "OnVarlist", UT_mode4)
         return true
     elseif packet:find("buttonClicked|UT_off") then
         ut_of_or_no = false
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9UT mode is now `3off")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9UT mode is now `3off")
         ut_emptier_mode = false
         ut_adder_mode = false
         return true
@@ -3085,7 +3082,7 @@ function gaia_adder_hook(type, packet)
     if packet == ("action|input\n|text|/gaia add") or packet == ("action|input\n|text|/ga") then
             gaia_adder_mode = true
             gaia_emptier_mode = false
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9fast GAIA adder `3enabled")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9fast GAIA adder `3enabled")
             AddCallback("GAIA_mode1", "OnVarlist", GAIA_mode1)
             AddCallback("GAIA_mode2", "OnVarlist", GAIA_mode2)
             return true
@@ -3098,7 +3095,7 @@ function gaia_emptier_hook(type, packet)
     if packet == ("action|input\n|text|/gaia empty") or packet == ("action|input\n|text|/ge") then
             gaia_emptier_mode = true
             gaia_adder_mode = false
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9fast GAIA emptier `3enabled")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9fast GAIA emptier `3enabled")
             AddCallback("GAIA_mode3", "OnVarlist", GAIA_mode3)
             AddCallback("GAIA_mode4", "OnVarlist", GAIA_mode4)
             return true
@@ -3109,7 +3106,7 @@ AddCallback("gaia_emptier_hook","OnPacket", gaia_emptier_hook)
 
 function gaia_on_off(type, packet)
     if packet == ("action|input\n|text|/gaia off") or packet == ("action|input\n|text|/goff") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9GAIA mode is now `3off")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9GAIA mode is now `3off")
         gaia_emptier_mode = false
         gaia_adder_mode = false
         return true
@@ -3182,7 +3179,7 @@ function GAIA_modes12(type, packet)
         gaia_of_or_no = true
         gaia_adder_mode = true
         gaia_emptier_mode = false
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9fast GAIA adder `3enabled")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9fast GAIA adder `3enabled")
         AddCallback("GAIA_mode1", "OnVarlist", GAIA_mode1)
         AddCallback("GAIA_mode2", "OnVarlist", GAIA_mode2)
         return true
@@ -3190,13 +3187,13 @@ function GAIA_modes12(type, packet)
         gaia_of_or_no = true
         gaia_emptier_mode = true
         gaia_adder_mode = false
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9fast GAIA emptier `3enabled")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9fast GAIA emptier `3enabled")
         AddCallback("GAIA_mode3", "OnVarlist", GAIA_mode3)
         AddCallback("GAIA_mode4", "OnVarlist", GAIA_mode4)
         return true
     elseif packet:find("buttonClicked|GAIA_off") then
         gaia_of_or_no = false
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9GAIA mode is now `3off")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9GAIA mode is now `3off")
         gaia_emptier_mode = false
         gaia_adder_mode = false
         return true
@@ -3224,12 +3221,12 @@ function auto_put_donationbox_hook_xd(type, packet)
             mode_donation_boxes1 = "Donation_Off"
             auto_empty_donationbox_mode = false
             auto_put_donationbox_mode = false
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9fast empty donation `3disabled")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9fast empty donation `3disabled")
         elseif auto_put_donationbox_mode == false then
             mode_donation_boxes = "Donation_Add"
             auto_empty_donationbox_mode = false
             auto_put_donationbox_mode = true
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9fast empty donation `3enabled")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9fast empty donation `3enabled")
         end
     return true
 end
@@ -3256,12 +3253,12 @@ function auto_empty_donationbox_hook_xd(type, packet)
             mode_donation_boxes1 = "Donation_Off"
             auto_empty_donationbox_mode = false
             auto_put_donationbox_mode = false
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9fast empty donation `3disabled")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9fast empty donation `3disabled")
         elseif auto_empty_donationbox_mode == false then
             mode_donation_boxes = "Donation_Empty"
             auto_put_donationbox_mode = false
             auto_empty_donationbox_mode = true
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9fast empty donation `3enabled")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9fast empty donation `3enabled")
         end
     return true
 end
@@ -3275,7 +3272,7 @@ function donationoff(type, packet)
         mode_donation_boxes1 = "Donation_Off"
         auto_empty_donationbox_mode = false
         auto_put_donationbox_mode = false
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Donation Box mode is now `3disabled")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Donation Box mode is now `3disabled")
         return true
     end
 end
@@ -3316,7 +3313,7 @@ function donation_modes_69(type, packet)
         mode_donation_boxes1 = "Donation_Off"
         auto_empty_donationbox_mode = false
         auto_put_donationbox_mode = false
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Donation Box mode is now `3disabled")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Donation Box mode is now `3disabled")
         return true
     end
 end
@@ -3395,7 +3392,7 @@ function auto_ban_fire_maker(varlist)
         function fireban(v)
             if v[0] == "OnTalkBubble" and v[2]:find("`4MWAHAHAHA!!") then
                 netid = v[1]
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Player with a netid of `3"..netid.." `9placed a pocket lighter !")
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Player with a netid of `3"..netid.." `9placed a pocket lighter !")
                 pkt = [[action|wrench
                 |netid|]]..netid
                 pkt2 = [[action|dialog_return
@@ -3417,11 +3414,11 @@ function auto_ban_fire_maker_hook_xd(type, packet)
     if packet == ("action|input\n|text|/fire ban") then
         if auto_ban_fire_maker_mode == true then
             auto_ban_fire_maker_mode = false
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9auto ban fire maker `3disabled")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9auto ban fire maker `3disabled")
         RemoveCallback("auto_ban_fire_maker")
         elseif auto_ban_fire_maker_mode == false then
             auto_ban_fire_maker_mode = true
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9auto ban fire maker `3enabled")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9auto ban fire maker `3enabled")
         AddCallback("auto_ban_fire_maker","OnVarlist", auto_ban_fire_maker)
         end
     return true
@@ -3446,11 +3443,11 @@ function fd_hook_xd(type, packet)
     if packet == ("action|input\n|text|/fd") then
         if fd_mode == true then
             fd_mode = false
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9fast drop `3disabled")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9fast drop `3disabled")
         RemoveCallback("fd")
         elseif fd_mode == false then
             fd_mode = true
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9fast drop `3enabled")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9fast drop `3enabled")
         AddCallback("fd","OnVarlist", fd)
         end
     return true
@@ -3476,11 +3473,11 @@ function ft_hook_xd(type, packet)
     if packet == ("action|input\n|text|/ft") then
         if ft_mode == true then
             ft_mode = false
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9fast trash `3disabled")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9fast trash `3disabled")
         RemoveCallback("ft")
         elseif ft_mode == false then
             ft_mode = true
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9fast trash `3enabled")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9fast trash `3enabled")
         AddCallback("ft","OnVarlist", ft)
         end
     return true
@@ -3575,7 +3572,7 @@ AddCallback("join_commands","OnPacket", join_commands)
 function join_ui_mode(type, packet)
     if packet:find("buttonClicked|join_pull") then
         set_mod_join = "pull"
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9join command set to : `3"..set_mod_join)
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9join command set to : `3"..set_mod_join)
         function when_join(vlist)
             if vlist[0]=="OnSpawn" then
                 a = vlist[1]:match("name|(`.[^`]+)")
@@ -3587,12 +3584,12 @@ function join_ui_mode(type, packet)
         return true
     elseif packet:find("buttonClicked|join_off") then
         set_mod_join = "off"
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9turning off join mode")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9turning off join mode")
         RemoveCallback("when_join")
         return true
     elseif packet:find("buttonClicked|join_kick") then
         set_mod_join = "kick"
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9join command set to : `3"..set_mod_join)
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9join command set to : `3"..set_mod_join)
         function when_join(vlist)
             if vlist[0]=="OnSpawn" then
                 a = vlist[1]:match("name|(`.[^`]+)")
@@ -3604,7 +3601,7 @@ function join_ui_mode(type, packet)
         return true
     elseif packet:find("buttonClicked|join_ban") then
         set_mod_join = "ban"
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9join command set to : `3"..set_mod_join)
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9join command set to : `3"..set_mod_join)
         function when_join(vlist)
             if vlist[0]=="OnSpawn" then
                 a = vlist[1]:match("name|(`.[^`]+)")
@@ -3625,11 +3622,11 @@ function set_mod_join2(type, packet)
       if text:find("/") then
         cmd = text:gsub("/", "")
         if cmd:find("j") and not cmd:find("join") and not cmd:find("bj") then
-            -- OnConsoleMessage("`0[ `3Mandq#3038 `0] `9This command is `4currently locked `9due to some bugs.")
+            -- OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9This command is `4currently locked `9due to some bugs.")
             set_mod_joinx2 = cmd:gsub("j ", "")
             if set_mod_joinx2 == "ban" then
                 set_mod_join = "ban"
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9join command set to : `3"..set_mod_join2)
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9join command set to : `3"..set_mod_join2)
                 function when_join(vlist)
                     if vlist[0]=="OnSpawn" then
                         a = vlist[1]:match("name|(`.[^`]+)")
@@ -3641,7 +3638,7 @@ function set_mod_join2(type, packet)
             end
             if set_mod_joinx2 == "kick" then
                 set_mod_join = "kick"
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9join command set to : `3"..set_mod_join)
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9join command set to : `3"..set_mod_join)
                 function when_join(vlist)
                     if vlist[0]=="OnSpawn" then
                         a = vlist[1]:match("name|(`.[^`]+)")
@@ -3653,7 +3650,7 @@ function set_mod_join2(type, packet)
             end
             if set_mod_joinx2 == "pull" then
                 set_mod_join = "pull"
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9join command set to : `3"..set_mod_join)
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9join command set to : `3"..set_mod_join)
                 function when_join(vlist)
                     if vlist[0]=="OnSpawn" then
                         a = vlist[1]:match("name|(`.[^`]+)")
@@ -3665,7 +3662,7 @@ function set_mod_join2(type, packet)
             end
                 if set_mod_joinx2 == "off" then
                     set_mod_join = "off"
-                    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9turning off join mode")
+                    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9turning off join mode")
                     RemoveCallback("when_join")
                 end
           return true
@@ -3683,7 +3680,7 @@ function setbuywl()
     amount_gems_round = math.floor(gems_wl)
     amount = amount_gems_round
         while buying_wls do            
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Buying `3" ..amount.. " `9wls")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Buying `3" ..amount.. " `9wls")
             while amount~=0 do
             
             SendPacket(2, "action|buy\nitem|world_lock")
@@ -3693,7 +3690,7 @@ function setbuywl()
             
             end
             
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Done")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Done")
             buying_wls = false
 		end
 end
@@ -3701,10 +3698,10 @@ end
 function start_stop_buywls(type, packet)
     if packet == ("action|input\n|text|/buywl") then
         if buying_wls then
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Done !")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Done !")
             buying_wls = false
            else
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Buying wls is `3on")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Buying wls is `3on")
             buying_wls = true
         end
            RunThread(function()
@@ -3758,7 +3755,7 @@ AddCallback("fake_ban","OnPacket", fake_ban)
 
 function spinall(type, packet)
     if packet == ("action|input\n|text|/spinall") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Spinning all wheels")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Spinning all wheels")
 local function Hit(x, y)
     local p = {}
     p.type = 3
@@ -3797,11 +3794,11 @@ function auto_crime(type, packet)
     if packet == ("action|input\n|text|/autocrime") then
         if autocrime then
             autocrime = false
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Auto-crime `3Stopped")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Auto-crime `3Stopped")
             RemoveCallback("crime")
         return true
         else
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Auto-crime `3Started")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Auto-crime `3Started")
             autocrime = true
             function crime(var)
                 if var[0]:find("OnDialogRequest") then
@@ -3815,7 +3812,7 @@ function auto_crime(type, packet)
                     if var[1]:find("|Battle%!|")  then
                         x = var[1]:match("tilex|(%d+)")
                         y = var[1]:match("tiley|(%d+)")
-                        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Villian :`3" .. var[1]:match("add_textbox|(.*)`` is"))
+                        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Villian :`3" .. var[1]:match("add_textbox|(.*)`` is"))
             
                         if var[1]:find("Crime in Progress") then
                             c1 = 2298
@@ -3930,7 +3927,7 @@ function auto_crime(type, packet)
                             use = "passturn"
                         end
             
-                        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Please wait..")
+                        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Please wait..")
                         SendPacket(2,"action|dialog_return\ndialog_name|crime_edit\ntilex|" ..x .. "|\ntiley|" .. y .. "|\nstate|1||\nbuttonClicked|c" .. use)
                     elseif var[1]:find("Fighting Crime") and var[1]:find("Ms%. Terry") then
                         if var[1]:find("is going to play `%d") then
@@ -3959,7 +3956,7 @@ function auto_crime(type, packet)
                             use = "passturn"
                         end
             
-                        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Please wait..")
+                        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Please wait..")
                         SendPacket(2,"action|dialog_return\ndialog_name|crime_edit\ntilex|" ..x .. "|\ntiley|" .. y .. "|\nstate|1||\nbuttonClicked|c" .. use)
                     elseif var[1]:find("Fighting Crime") and var[1]:find("Dr%. Destructo") then
                         if var[1]:find("c" .. use1) and step == "0" then
@@ -3972,7 +3969,7 @@ function auto_crime(type, packet)
                         else
                             use = "passturn"
                         end
-                        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Please wait..")
+                        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Please wait..")
                         SendPacket(2,"action|dialog_return\ndialog_name|crime_edit\ntilex|" ..x .. "|\ntiley|" .. y .. "|\nstate|1||\nbuttonClicked|c" .. use)
                     elseif var[1]:find("Fighting Crime") then
                         if var[1]:find("c" .. use1) then
@@ -3985,7 +3982,7 @@ function auto_crime(type, packet)
                             use = "passturn"
                         end
             
-                        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Please wait..")
+                        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Please wait..")
                         SendPacket(2, "action|dialog_return\ndialog_name|crime_edit\ntilex|" ..x .. "|\ntiley|" .. y .. "|\nstate|1||\nbuttonClicked|c" .. use)
                     end
                     return true
@@ -4007,14 +4004,14 @@ function auto_surg(type, packet)
     if packet == ("action|input\n|text|/autosurg") then
         if autosurg then
             autosurg = false
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Auto-surg `3Stopped")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Auto-surg `3Stopped")
             RemoveCallback("surg")
         return true
         else
 autosurg = true
 tool = ""
 itool = 0
-OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Auto-surg `3Started")
+OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Auto-surg `3Started")
 function auto()
     if tool == "Sponge" then
         itool = 1258
@@ -4228,7 +4225,7 @@ AddCallback("auto_surg","OnPacket", auto_surg)
 
 function gemsx(type, packet)
     if packet == ("action|input\n|text|/gems") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9counting gems..")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9counting gems..")
         count = 0
         for _, obj in pairs(GetObjects()) do
         if obj.id == 112  then
@@ -4257,7 +4254,7 @@ function settax(type, packet)
         if cmd:find("settax") then
             settax_main = cmd:gsub("settax", "")
             settax_1 = tonumber(settax_main)
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9tax set to : `3"..settax_1.."%")
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9tax set to : `3"..settax_1.."%")
           return true
         end
     end
@@ -4278,8 +4275,8 @@ function tax(type, packet)
             real_tax = math.floor(real_tax)
             tax_1_1 = math.floor(tax_1_1)
             drop_tax = tax_1_1 - real_tax
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9amount to drop : `3"..tax_1_1 - real_tax)
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9amount to keep : `3"..real_tax)
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9amount to drop : `3"..tax_1_1 - real_tax)
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9amount to keep : `3"..real_tax)
             var2 = {}
             var2[0] = "OnTextOverlay"
             var2[1] = "     `3Tax calculator`0\n`9Amount taken : `3"..tax_1.."\n`9amount to drop : `3"..drop_tax.."\n`9amount to keep : `3"..real_tax
@@ -4303,7 +4300,7 @@ function setspam()
             Sleep(set_spam_delay * 1000)
 		end
 	elseif set_spam_delay < 2 then
-    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9delay cant be less than 2 !")
+    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9delay cant be less than 2 !")
 	end
 end
 
@@ -4314,7 +4311,7 @@ function set_spam_text(type, packet)
         cmd = text:gsub("/", "")
         if cmd:find("spamtext") then
             set_spam_text = cmd:gsub("spamtext ", "")
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9spam text set to : `3"..set_spam_text)
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9spam text set to : `3"..set_spam_text)
           return true
         end
     end
@@ -4330,7 +4327,7 @@ function set_spam_text2(type, packet)
         cmd = text:gsub("/", "")
         if cmd:find("spamt") then
             set_spam_text = cmd:gsub("spamt ", "")
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9spam text set to : `3"..set_spam_text)
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9spam text set to : `3"..set_spam_text)
           return true
         end
     end
@@ -4347,7 +4344,7 @@ function set_spam_delay(type, packet)
         if cmd:find("spamdelay") then
             set_spam_delay = cmd:gsub("spamdelay", "")
             set_spam_delay = tonumber(set_spam_delay)
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9spam delay set to : `3"..set_spam_delay.." `9Seconds ")
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9spam delay set to : `3"..set_spam_delay.." `9Seconds ")
           return true
         end
     end
@@ -4364,7 +4361,7 @@ function set_spam_delay1(type, packet)
         if cmd:find("sd") then
             set_spam_delay = cmd:gsub("sd", "")
             set_spam_delay = tonumber(set_spam_delay)
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9spam delay set to : `3"..set_spam_delay.." `9Seconds ")
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9spam delay set to : `3"..set_spam_delay.." `9Seconds ")
           return true
         end
     end
@@ -4376,10 +4373,10 @@ AddCallback("set_spam_delay1","OnPacket", set_spam_delay1)
 function start_stop_spam(type, packet)
         if packet == ("action|input\n|text|//") then
             if spamming then
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9spam is `3off")
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9spam is `3off")
                 spamming = false
                else
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9spam is `3on")
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9spam is `3on")
                 spamming = true
             end
                RunThread(function()
@@ -4392,7 +4389,7 @@ AddCallback("start_stop_spam","OnPacket", start_stop_spam)
 
 function dropall(type, packet)
     if packet == ("action|input\n|text|/dropall") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9dropping all items..")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9dropping all items..")
         for k,v in ipairs(GetInventory()) do
             SendPacket(2 ,"action|drop\n|itemID|"..v.id)
             SendPacket(2 ,"action|dialog_return\ndialog_name|drop_item\nitemID|"..v.id.."|\ncount|"..v.count)
@@ -4438,10 +4435,10 @@ function set_harvest_id(type, packet)
             set_harvest_id123 = tonumber(set_harvest_id123)
             if (set_harvest_id123 % 2 ~= 0) then
                 set_harvest_id = tonumber(set_harvest_id123)
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9harvest id set to : `3"..set_harvest_id)
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9harvest id set to : `3"..set_harvest_id)
                 return true
             else
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9seed id must be a odd number !")
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9seed id must be a odd number !")
             return true
         end
     end
@@ -4460,10 +4457,10 @@ function set_harvest_delay(type, packet)
             set_harvest_delay123 = tonumber(set_harvest_delay123)
             if set_harvest_delay123 >= 150 then
             set_harvest_delay = tonumber(set_harvest_delay123)
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9harvest delay set to : `3"..set_harvest_delay.." `9Mili-Seconds ")
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9harvest delay set to : `3"..set_harvest_delay.." `9Mili-Seconds ")
                 return true
             else
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9delay cant be less than 150 !")
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9delay cant be less than 150 !")
             return true
         end
     end
@@ -4475,10 +4472,10 @@ AddCallback("set_harvest_delay","OnPacket", set_harvest_delay)
 function start_stop_harvest(type, packet)
         if packet == ("action|input\n|text|/hv") then
             if harvesting then
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9harvest is `3off")
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9harvest is `3off")
                 harvesting = false
                else
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9harvest is `3on")
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9harvest is `3on")
                 harvesting = true
             end
                RunThread(function()
@@ -4491,7 +4488,7 @@ AddCallback("start_stop_harvest","OnPacket", start_stop_harvest)
 
 function inv(type, packet)
     if packet == ("action|input\n|text|/inv") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9redcuing lag..")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9redcuing lag..")
         for _,player in pairs(GetPlayers()) do
             var2 = {}
             var2[0] = "OnSetClothing"
@@ -4517,7 +4514,7 @@ function weatherlol(type, packet)
         var[1] = x
         var.netid = -1
         SendVarlist(var)
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9changing weather value to : `3"..x)
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9changing weather value to : `3"..x)
     return true
     end
 end
@@ -4532,7 +4529,7 @@ function dad(type, packet)
         dad_count = math.floor(dad_count1)
     end
     end
-    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Dropping `3" ..dad_count.. " `9dls")
+    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Dropping `3" ..dad_count.. " `9dls")
     OnTextOverlay("`9Dropping `3" ..dad_count.. " `9dls")
     SendPacket(2, "action|drop\n|itemID|1796")
     SendPacket(2, "action|dialog_return\ndialog_name|drop_item\nitemID|1796|\ncount|"..dad_count1)
@@ -4549,7 +4546,7 @@ function guildxx(type, packet)
         cmd = text:gsub("/", "")
         if cmd:find("guild") then
             guildxxid = cmd:gsub("guild", "")
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9changing guild to `3" ..guildxxid)
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9changing guild to `3" ..guildxxid)
             guildxxid = tonumber(guildxxid)
             var = {}
             var[0] = "OnGuildDataChanged"
@@ -4577,7 +4574,7 @@ function cahngenamexx(type, packet)
           cahnge_name = 0
           cahnge_name = cahngenamexx1
 
-          OnConsoleMessage("`0[ `3Mandq#3038 `0] `9name changed to `9"..cahnge_name.."")
+          OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9name changed to `9"..cahnge_name.."")
           var = {}
           var[0] = "OnNameChanged"
           var[1] = cahnge_name
@@ -4599,7 +4596,7 @@ function ban_unacces_leave()
     Moderatorvar[3] = "audio/hub_open.wav"
     Moderatorvar[4] = 0
     Moderatorvar.netid = -1
-    OnConsoleMessage("`0[ `3Mandq#3038 `0] `#@Moderator `4Just joined the world.")
+    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `#@Moderator `4Just joined the world.")
     SendVarlist(Moderatorvar)
     var2 = {}
     var2[0] = "OnTextOverlay"
@@ -4627,11 +4624,11 @@ function ban_unacces_leave()
     end
     collectItems()
     -- ban unacces leave
-    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9baning all players")
+    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9baning all players")
     for _,player in pairs(GetPlayers()) do
         SendPacket(2,  "action|input\n|text|/ban " .. player.name:sub(3, -3))
     end
-    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9unaccessing")
+    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9unaccessing")
     SendPacket(2, "action|input\n|text|/unaccess")
     SendPacket(2, "action|dialog_return\ndialog_name|unaccess")
     SendPacket(3, "action|quit_to_exit")
@@ -4646,7 +4643,7 @@ function unacces_leave()
     Moderatorvar[3] = "audio/hub_open.wav"
     Moderatorvar[4] = 0
     Moderatorvar.netid = -1
-    OnConsoleMessage("`0[ `3Mandq#3038 `0] `#@Moderator `4Just joined the world.")
+    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `#@Moderator `4Just joined the world.")
     SendVarlist(Moderatorvar)
     var2 = {}
     var2[0] = "OnTextOverlay"
@@ -4674,7 +4671,7 @@ function unacces_leave()
     end
     collectItems()
     -- unacces leave
-    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9unaccessing")
+    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9unaccessing")
     SendPacket(2, "action|input\n|text|/unaccess")
     SendPacket(2, "action|dialog_return\ndialog_name|unaccess")
     SendPacket(3, "action|quit_to_exit")
@@ -4689,7 +4686,7 @@ function leave()
     Moderatorvar[3] = "audio/hub_open.wav"
     Moderatorvar[4] = 0
     Moderatorvar.netid = -1
-    OnConsoleMessage("`0[ `3Mandq#3038 `0] `#@Moderator `4Just joined the world.")
+    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `#@Moderator `4Just joined the world.")
     SendVarlist(Moderatorvar)
     var2 = {}
     var2[0] = "OnTextOverlay"
@@ -4729,7 +4726,7 @@ unacces_leave()
 elseif casino_help_when_join == "3" then
 leave()
 else 
-OnConsoleMessage("`0[ `3Mandq#3038 `0] `9this command is turned off")
+OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9this command is turned off")
 end
 return true
 end
@@ -4745,7 +4742,7 @@ if cmd:find("safe") then
 casino_help_when_join = cmd:gsub("safe ", "")
 if casino_help_when_join == "1" then
         casino_help_when_joinx = "`3ban unacces leave"
-    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Updated : `3"..casino_help_when_joinx)
+    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Updated : `3"..casino_help_when_joinx)
         function Moderator(v)
             if v[0] == "OnGuildDataChanged" then
                 if v[3] == 5956 then
@@ -4756,7 +4753,7 @@ if casino_help_when_join == "1" then
                     Moderatorvar[3] = "audio/hub_open.wav"
                     Moderatorvar[4] = 0
                     Moderatorvar.netid = -1
-                    OnConsoleMessage("`0[ `3Mandq#3038 `0] `#@Moderator `4Just joined the world.")
+                    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `#@Moderator `4Just joined the world.")
                     SendVarlist(Moderatorvar)
                     var2 = {}
                     var2[0] = "OnTextOverlay"
@@ -4784,11 +4781,11 @@ if casino_help_when_join == "1" then
                     end
                     collectItems()
                     -- ban unacces leave
-                    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9baning all players")
+                    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9baning all players")
                     for _,player in pairs(GetPlayers()) do
                         SendPacket(2,  "action|input\n|text|/ban " .. player.name:sub(3, -3))
                     end
-                    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9unaccessing")
+                    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9unaccessing")
                     SendPacket(2, "action|input\n|text|/unaccess")
                     SendPacket(2, "action|dialog_return\ndialog_name|unaccess")
                     SendPacket(3, "action|quit_to_exit")
@@ -4808,7 +4805,7 @@ if casino_help_when_join == "1" then
                     Guardianvar[3] = "audio/hub_open.wav"
                     Guardianvar[4] = 0
                     Guardianvar.netid = -1
-                    OnConsoleMessage("`0[ `3Mandq#3038 `0] `#@Guardian `4Just joined the world.")
+                    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `#@Guardian `4Just joined the world.")
                     SendVarlist(Guardianvar)
                     var2 = {}
                     var2[0] = "OnTextOverlay"
@@ -4836,11 +4833,11 @@ if casino_help_when_join == "1" then
                     end
                     collectItems()
                     -- ban unacces leave
-                    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9baning all players")
+                    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9baning all players")
                     for _,player in pairs(GetPlayers()) do
                         SendPacket(2,  "action|input\n|text|/ban " .. player.name:sub(3, -3))
                     end
-                    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9unaccessing")
+                    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9unaccessing")
                     SendPacket(2, "action|input\n|text|/unaccess")
                     SendPacket(2, "action|dialog_return\ndialog_name|unaccess")
                     SendPacket(3, "action|quit_to_exit")
@@ -4852,7 +4849,7 @@ if casino_help_when_join == "1" then
 end
 if casino_help_when_join == "2" then
     casino_help_when_joinx = "`3unacces leave"
-    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Updated : `3"..casino_help_when_joinx)
+    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Updated : `3"..casino_help_when_joinx)
 
         function Moderator(v)
             if v[0] == "OnGuildDataChanged" then
@@ -4864,7 +4861,7 @@ if casino_help_when_join == "2" then
                     Moderatorvar[3] = "audio/hub_open.wav"
                     Moderatorvar[4] = 0
                     Moderatorvar.netid = -1
-                    OnConsoleMessage("`0[ `3Mandq#3038 `0] `#@Moderator `4Just joined the world.")
+                    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `#@Moderator `4Just joined the world.")
                     SendVarlist(Moderatorvar)
                     var2 = {}
                     var2[0] = "OnTextOverlay"
@@ -4892,7 +4889,7 @@ if casino_help_when_join == "2" then
                     end
                     collectItems()
                     -- unacces leave
-                    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9unaccessing")
+                    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9unaccessing")
                     SendPacket(2, "action|input\n|text|/unaccess")
                     SendPacket(2, "action|dialog_return\ndialog_name|unaccess")
                     SendPacket(3, "action|quit_to_exit")
@@ -4912,7 +4909,7 @@ if casino_help_when_join == "2" then
                     Guardianvar[3] = "audio/hub_open.wav"
                     Guardianvar[4] = 0
                     Guardianvar.netid = -1
-                    OnConsoleMessage("`0[ `3Mandq#3038 `0] `#@Guardian `4Just joined the world.")
+                    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `#@Guardian `4Just joined the world.")
                     SendVarlist(Guardianvar)
                     var2 = {}
                     var2[0] = "OnTextOverlay"
@@ -4940,7 +4937,7 @@ if casino_help_when_join == "2" then
                     end
                     collectItems()
                     -- unacces leave
-                    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9unaccessing")
+                    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9unaccessing")
                     SendPacket(2, "action|input\n|text|/unaccess")
                     SendPacket(2, "action|dialog_return\ndialog_name|unaccess")
                     SendPacket(3, "action|quit_to_exit")
@@ -4953,7 +4950,7 @@ if casino_help_when_join == "2" then
 end
 if casino_help_when_join == "3" then
         casino_help_when_joinx = "`3leave"
-    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Updated : `3"..casino_help_when_joinx)
+    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Updated : `3"..casino_help_when_joinx)
 
         function Guardian(v)
             if v[0] == "OnGuildDataChanged" then
@@ -4965,7 +4962,7 @@ if casino_help_when_join == "3" then
                     Guardianvar[3] = "audio/hub_open.wav"
                     Guardianvar[4] = 0
                     Guardianvar.netid = -1
-                    OnConsoleMessage("`0[ `3Mandq#3038 `0] `#@Guardian `4Just joined the world.")
+                    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `#@Guardian `4Just joined the world.")
                     SendVarlist(Guardianvar)
                     var2 = {}
                     var2[0] = "OnTextOverlay"
@@ -5009,7 +5006,7 @@ if casino_help_when_join == "3" then
                     Moderatorvar[3] = "audio/hub_open.wav"
                     Moderatorvar[4] = 0
                     Moderatorvar.netid = -1
-                    OnConsoleMessage("`0[ `3Mandq#3038 `0] `#@Moderator `4Just joined the world.")
+                    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `#@Moderator `4Just joined the world.")
                     SendVarlist(Moderatorvar)
                     var2 = {}
                     var2[0] = "OnTextOverlay"
@@ -5044,7 +5041,7 @@ if casino_help_when_join == "3" then
         AddCallback("Moderator","OnVarlist", Moderator)
 end
     if casino_help_when_join == "off" then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Safe mode is turned off ")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Safe mode is turned off ")
         RemoveCallback("Moderator")
         RemoveCallback("Guardian")
     end
@@ -5057,7 +5054,7 @@ AddCallback("casino_help_when_join","OnPacket", casino_help_when_join)
 
 function save(type, packet)
     if packet == ("action|input\n|text|/save") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Warping to `9Save World")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Warping to `9Save World")
     SendPacket(3, "action|join_request\nname|"..setsave_world1.."\ninvitedWorld|0")
     return true
     end
@@ -5107,10 +5104,10 @@ end
 function blink_main(type, packet)
         if packet == ("action|input\n|text|/blink") then
             if blinking then
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9blink mode is `3off")
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9blink mode is `3off")
                 blinking = false
                else 
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9blink mode is `3on")
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9blink mode is `3on")
                 blinking = true
                end
 
@@ -5130,7 +5127,7 @@ function collectrangex(type, packet)
         cmd = text:gsub("/", "")
         if cmd:find("ccollect") then
           collect_range = cmd:gsub("ccollect", "")
-          OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Collenting items in `3" ..collect_range.. " `9range")
+          OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Collenting items in `3" ..collect_range.. " `9range")
           function collectItems(range, delay, ispos)
             if not ispos then
                 range = (range or collect_range)*32
@@ -5166,7 +5163,7 @@ function collectrangexd(type, packet)
         cmd = text:gsub("/", "")
         if cmd:find("cc") then
           collect_range = cmd:gsub("cc", "")
-          OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Collenting items in `3" ..collect_range.. " `9range")
+          OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Collenting items in `3" ..collect_range.. " `9range")
           function collectItems(range, delay, ispos)
             if not ispos then
                 range = (range or collect_range)*32
@@ -5205,7 +5202,7 @@ function extactoreh1(type, packet)
             if cmd:find("pickup") then
                 pick_up_id = cmd:gsub("pickup", "")
                 pick_up_id = tonumber(pick_up_id)
-                OnConsoleMessage("`0[ `3Mandq#3038 `0] `9only picking `3"..pick_up_id)
+                OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9only picking `3"..pick_up_id)
                 ID_TBL={
                     [pick_up_id]=1,
                     }
@@ -5242,11 +5239,11 @@ function no_pickup(type, packet)
     if packet == ("action|input\n|text|/nopickup") then
         if nopickup then
             nopickup = false
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9No pick-up turned `3off")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9No pick-up turned `3off")
             RemoveCallback("pickup12")
         return true
         else
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9No pick-up turned `3on")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9No pick-up turned `3on")
 
 ID_TBL={
     [0]=1,
@@ -5279,7 +5276,7 @@ AddCallback("no_pickup","OnPacket", no_pickup)
 
 function host(type, packet)
     if packet == ("action|input\n|text|/host") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Warping to `9Host World")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Warping to `9Host World")
     SendPacket(3, "action|join_request\nname|"..sethost_world1.."\ninvitedWorld|0")
     return true
     end
@@ -5291,7 +5288,7 @@ collect_pos = {{x_pos1, y_pos1}, {x_pos2, y_pos2}, {x_pos3, y_pos3}, {x_pos4, y_
 
 function collect_wls(type, packet)
     if packet == ("action|input\n|text|/collect") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Collecting")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Collecting")
         Possessions = {{x_pos1, y_pos1}, {x_pos2, y_pos2}, {x_pos3, y_pos3}, {x_pos4, y_pos4}}
         function collect(obj)   
             pkt = {}
@@ -5318,7 +5315,7 @@ AddCallback("collect_pos","OnPacket", collect_wls)
 
 function pullall(type, packet)
     if packet == ("action|input\n|text|/pullall") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9pulling all players")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9pulling all players")
         for _,player in pairs(GetPlayers()) do
             SendPacket(2,  "action|input\n|text|/pull " .. player.name:sub(3, -3))
         end
@@ -5332,7 +5329,7 @@ function showxy(type, packet)
     if packet == ("action|input\n|text|/xy") then
         x_pos_lols = math.floor(GetLocal().pos_x / 32)
         y_pos_lols = math.floor(GetLocal().pos_y / 32)
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9X : `3" ..x_pos_lols.. " `9Y `3:" ..y_pos_lols.."")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9X : `3" ..x_pos_lols.. " `9Y `3:" ..y_pos_lols.."")
     return true
     end
 end
@@ -5341,7 +5338,7 @@ AddCallback("show_xy","OnPacket", showxy)
 
 function banall(type, packet)
     if packet == ("action|input\n|text|/banall") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9baning all players")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9baning all players")
         for _,player in pairs(GetPlayers()) do
             SendPacket(2,  "action|input\n|text|/ban " .. player.name:sub(3, -3))
         end
@@ -5353,7 +5350,7 @@ AddCallback("banall","OnPacket", banall)
 
 function kickall(type, packet)
     if packet == ("action|input\n|text|/kickall") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9kicking all players")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9kicking all players")
         for _,player in pairs(GetPlayers()) do
             SendPacket(2,  "action|input\n|text|/kick " .. player.name:sub(3, -3))
         end
@@ -5365,7 +5362,7 @@ AddCallback("kickall","OnPacket", kickall)
 
 function tradeall(type, packet)
     if packet == ("action|input\n|text|/tradeall") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9trading all players")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9trading all players")
         for _,player in pairs(GetPlayers()) do
             SendPacket(2,  "action|input\n|text|/trade " .. player.name:sub(3, -3))
         end
@@ -5386,7 +5383,7 @@ function ping(type, packet)
             if GetPing() < 150 then
             color = "`2"
             end
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Your ping is : "..color..""..math.floor((GetPing())))
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Your ping is : "..color..""..math.floor((GetPing())))
     return true
     end
 end
@@ -5395,7 +5392,7 @@ AddCallback("ping","OnPacket", ping)
 
 function hidenname(type, packet)
     if packet == ("action|input\n|text|/hide") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9hiding all players names")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9hiding all players names")
         for _,player in pairs(GetPlayers()) do
             GetLocal().name = GetLocal().name:removeColors()
             GetLocal().name = GetLocal().name:gsub(" of Legend", "")
@@ -5417,7 +5414,7 @@ titlexd = "none"
 function title1(type, packet)
     if packet == ("action|input\n|text|/g4g") then
         titlexd = "g4g"
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9title effect `3DONOR `9enabled !")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9title effect `3DONOR `9enabled !")
             GetLocal().name = GetLocal().name:removeColors()
             GetLocal().name = GetLocal().name:gsub(" of Legend", "")
             GetLocal().name = GetLocal().name:gsub("Dr.", "")
@@ -5435,7 +5432,7 @@ AddCallback("title_1","OnPacket", title1)
 function title2(type, packet)
     if packet == ("action|input\n|text|/master") then
         titlexd = "master"
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9title effect `3MASTED `9enabled !")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9title effect `3MASTED `9enabled !")
             GetLocal().name = GetLocal().name:removeColors()
             GetLocal().name = GetLocal().name:gsub(" of Legend", "")
             GetLocal().name = GetLocal().name:gsub("Dr.", "")
@@ -5453,7 +5450,7 @@ AddCallback("title_2","OnPacket", title2)
 function title3(type, packet)
     if packet == ("action|input\n|text|/doctor") then
         titlexd = "doctor"
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9title effect `3DOCTOR `9enabled !")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9title effect `3DOCTOR `9enabled !")
             GetLocal().name = GetLocal().name:removeColors()
             GetLocal().name = GetLocal().name:gsub(" of Legend", "")
             GetLocal().name = GetLocal().name:gsub("Dr.", "")
@@ -5472,7 +5469,7 @@ AddCallback("title_3","OnPacket", title3)
 function title4(type, packet)
     if packet == ("action|input\n|text|/maxlevel") then
         titlexd = "maxlevel"
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9title effect `3MAX LEVEL `9enabled !")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9title effect `3MAX LEVEL `9enabled !")
             GetLocal().name = GetLocal().name:removeColors()
             GetLocal().name = GetLocal().name:gsub(" of Legend", "")
             GetLocal().name = GetLocal().name:gsub("Dr.", "")
@@ -5490,7 +5487,7 @@ AddCallback("title_4","OnPacket", title4)
 function title5(type, packet)
     if packet == ("action|input\n|text|/oflegend") or packet == ("action|input\n|text|/legend") then
         titlexd = "legend"
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9title effect `3OF LEGEND `9enabled !")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9title effect `3OF LEGEND `9enabled !")
             GetLocal().name = GetLocal().name:removeColors()
             GetLocal().name = GetLocal().name:gsub(" of Legend", "")
             GetLocal().name = GetLocal().name:gsub("Dr.", "")
@@ -5508,7 +5505,7 @@ AddCallback("title_5","OnPacket", title5)
 
 function title6(type, packet)
     if packet == ("action|input\n|text|/title reset") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9 removing all titles")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9 removing all titles")
             GetLocal().name = GetLocal().name:removeColors()
             GetLocal().name = GetLocal().name:gsub(" of Legend", "")
             GetLocal().name = GetLocal().name:gsub("Dr.", "")
@@ -5550,9 +5547,9 @@ AddCallback("title_ui_commands","OnPacket", title_ui_commands)
 
 function title_mode(type, packet)
     if packet:find("buttonClicked|legend_title") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9pulling all players")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9pulling all players")
         titlexd = "legend"
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9title effect `3OF LEGEND `9enabled !")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9title effect `3OF LEGEND `9enabled !")
             GetLocal().name = GetLocal().name:removeColors()
             GetLocal().name = GetLocal().name:gsub(" of Legend", "")
             GetLocal().name = GetLocal().name:gsub("Dr.", "")
@@ -5565,7 +5562,7 @@ function title_mode(type, packet)
         return true
     elseif packet:find("buttonClicked|g4g_title") then
         titlexd = "g4g"
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9title effect `3DONOR `9enabled !")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9title effect `3DONOR `9enabled !")
             GetLocal().name = GetLocal().name:removeColors()
             GetLocal().name = GetLocal().name:gsub(" of Legend", "")
             GetLocal().name = GetLocal().name:gsub("Dr.", "")
@@ -5577,7 +5574,7 @@ function title_mode(type, packet)
         return true
     elseif packet:find("buttonClicked|master_title") then
         titlexd = "master"
-            OnConsoleMessage("`0[ `3Mandq#3038 `0] `9title effect `3MASTED `9enabled !")
+            OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9title effect `3MASTED `9enabled !")
             GetLocal().name = GetLocal().name:removeColors()
             GetLocal().name = GetLocal().name:gsub(" of Legend", "")
             GetLocal().name = GetLocal().name:gsub("Dr.", "")
@@ -5589,7 +5586,7 @@ function title_mode(type, packet)
         return true
     elseif packet:find("buttonClicked|doctor_title") then
         titlexd = "doctor"
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9title effect `3DOCTOR `9enabled !")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9title effect `3DOCTOR `9enabled !")
             GetLocal().name = GetLocal().name:removeColors()
             GetLocal().name = GetLocal().name:gsub(" of Legend", "")
             GetLocal().name = GetLocal().name:gsub("Dr.", "")
@@ -5601,7 +5598,7 @@ function title_mode(type, packet)
             SendVarlist(var)
         return true
     elseif packet:find("buttonClicked|reset_title") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9 removing all titles")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9 removing all titles")
             GetLocal().name = GetLocal().name:removeColors()
             GetLocal().name = GetLocal().name:gsub(" of Legend", "")
             GetLocal().name = GetLocal().name:gsub("Dr.", "")
@@ -5613,7 +5610,7 @@ function title_mode(type, packet)
         return true
     elseif packet:find("buttonClicked|maxlevel_title") then
         titlexd = "maxlevel"
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9title effect `3MAX LEVEL `9enabled !")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9title effect `3MAX LEVEL `9enabled !")
             GetLocal().name = GetLocal().name:removeColors()
             GetLocal().name = GetLocal().name:gsub(" of Legend", "")
             GetLocal().name = GetLocal().name:gsub("Dr.", "")
@@ -5653,7 +5650,7 @@ AddCallback("gs_xd","OnPacket", gs_xd)
 
 function growscan_mode(type, packet)
     if packet:find("buttonClicked|placed_gs") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Scaning placed blocks")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Scaning placed blocks")
         function round(n)
             return n % 1 >= 0.5 and math.ceil(n) or math.floor(n)
         end
@@ -5697,7 +5694,7 @@ varlist.netid = -1
 SendVarlist(varlist)
         return true
     elseif packet:find("buttonClicked|float_gs") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Scaning dropped items")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Scaning dropped items")
         function round(n)
             return n % 1 >= 0.5 and math.ceil(n) or math.floor(n)
         end
@@ -5765,7 +5762,7 @@ AddCallback("gs_back", "OnPacket", gs_back)
 
 function gs1(type, packet)
     if packet == ("action|input\n|text|/gs 1") or packet == ("action|input\n|text|/growscan 1")then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Scaning placed blocks")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Scaning placed blocks")
         function round(n)
             return n % 1 >= 0.5 and math.ceil(n) or math.floor(n)
         end
@@ -5809,7 +5806,7 @@ AddCallback("gs_1","OnPacket", gs1)
 
 function gs2(type, packet)
     if packet == ("action|input\n|text|/gs 2") or packet == ("action|input\n|text|/growscan 2")then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Scaning dropped items")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Scaning dropped items")
         function round(n)
             return n % 1 >= 0.5 and math.ceil(n) or math.floor(n)
         end
@@ -5848,7 +5845,7 @@ AddCallback("gs_2","OnPacket", gs2)
 
 function fc(type, packet)
     if packet == ("action|input\n|text|/fc") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Closing proxy.")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Closing proxy.")
         RemoveCallbacks()
     return true
     end
@@ -5877,7 +5874,7 @@ end
 
 function all_spin(type, packet)
     if packet == ("action|input\n|text|/spin all") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Spin mode set to `3QQ & REME")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Spin mode set to `3QQ & REME")
 function Spin_checker(varlist)
     if varlist[0] == "OnTalkBubble" and varlist[3] ~= -1 and varlist[2]:find("spun the wheel and got") then
       text = ""
@@ -5894,7 +5891,7 @@ function Spin_checker(varlist)
         var = {}
         var[0] = "OnTalkBubble"
         var[1] = varlist[1]
-        var[2] = "`0[ `1Mandq `0] `9CSN : `3"..x2.." `0x `9QEME : `3"..qq_mode.." `0x `9REME : `3"..reme_mode
+        var[2] = "`0[ `1\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9CSN : `3"..x2.." `0x `9QEME : `3"..qq_mode.." `0x `9REME : `3"..reme_mode
         var[3] = -1
         var.netid = -1
         SendVarlist(var)
@@ -5920,7 +5917,7 @@ AddCallback("all_spin","OnPacket", all_spin)
 
 function qq_spin(type, packet)
     if packet == ("action|input\n|text|/spin qq") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Spin mode set to `3QQ")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Spin mode set to `3QQ")
 function Spin_checker(varlist)
     if varlist[0] == "OnTalkBubble" and varlist[3] ~= -1 and varlist[2]:find("spun the wheel and got") then
       text = ""
@@ -5962,7 +5959,7 @@ AddCallback("qq_spin","OnPacket", qq_spin)
 
 function reme_spin(type, packet)
     if packet == ("action|input\n|text|/spin reme") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Spin mode set to `3REME")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Spin mode set to `3REME")
 function Spin_checker(varlist)
     if varlist[0] == "OnTalkBubble" and varlist[3] ~= -1 and varlist[2]:find("spun the wheel and got") then
       text = ""
@@ -6038,7 +6035,7 @@ AddCallback("Spin_checker", "OnVarlist", Spin_checker)
 
 function check_spin(type, packet)
     if packet == ("action|input\n|text|/spin check") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Spin mode set to `3Checker")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Spin mode set to `3Checker")
 function Spin_checker(varlist)
     if varlist[0] == "OnTalkBubble" and varlist[3] ~= -1 and varlist[2]:find("spun the wheel and got") then
       text = ""
@@ -6086,7 +6083,7 @@ function visual_spin_2(type, packet)
         if cmd:find("visualspin ") then
           spin_nmber = cmd:gsub("visualspin ", "")
           spin_nmber = tonumber(spin_nmber)
-          OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Visual spin set to `3"..spin_nmber)
+          OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Visual spin set to `3"..spin_nmber)
           if spin_nmber == 0 then
             color_visual_spin = 2
           elseif spin_nmber == 1 then
@@ -6200,7 +6197,7 @@ function visual_spin_2(type, packet)
 function check_drops(varlist)
     if varlist[0] == "OnConsoleMessage" and varlist[1]:find("Collected `w") then
         collectingxd = varlist[1]:removeColors()
-    OnConsoleMessage("`0[ `3Mandq#3038 `0] `9"..collectingxd)
+    OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9"..collectingxd)
         return true
     end
 end
@@ -6208,7 +6205,7 @@ AddCallback("check_drops","OnVarlist", check_drops)
 
 function check_login(varlist)
     if varlist[0] == "OnConsoleMessage" and varlist[1]:find("Welcome back,") then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Player Authentication `2Successful.")
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Player Authentication `2Successful.")
         return true
     end
 end
@@ -6216,7 +6213,7 @@ AddCallback("check_login","OnVarlist", check_login)
 
 function today_date(varlist)
     if varlist[0] == "OnTodaysDate" then
-        OnConsoleMessage("`0[ `3Mandq#3038 `0] `9Todays date : `3"..varlist[2].." `9/ `3"..varlist[4])
+        OnConsoleMessage("`0[ `3\77 \97 \110 \100 \113 \35 \51 \48 \51 \56 `0] `9Todays date : `3"..varlist[2].." `9/ `3"..varlist[4])
         return true
     end
 end
@@ -6281,7 +6278,7 @@ for i = 1,50 do
 end
 
 print("Thanks for using this proxy")
-print("Creator : Mandq#3038")
+print("Creator : \77 \97 \110 \100 \113 \35 \51 \48 \51 \56")
 print("https://discord.gg/Rq25SJegCJ")
 
 print("")
